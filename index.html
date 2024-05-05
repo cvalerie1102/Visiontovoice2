@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision2Voice</title>
+    <style>
+        html {
+            background: linear-gradient(to right, #05295b, #195cba, #2148C0, #042484);
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .container {
+            left: 50%;
+            color: white;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 40px;
+            margin-top: 125px;
+            margin-bottom: 60px;
+        }
+
+        .logo-image {
+            width: 300px;
+            height: auto;
+            margin: 0px 0;
+        }
+
+        .subtitle {
+            margin-top: 0px;
+            font-size: 30px;
+            color: #f9f9f9;
+            font-family: "Georgia";
+        }
+
+        .tbox {
+            width: 260px;
+            height: 40px;
+            background: #4b72f1;
+            border-radius: 3px;
+            margin: 10px auto;
+            border-style: solid;
+            border-width: .7px;
+            border-color: #ffffff;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+        .tbox input {
+            background: none;
+            border: none;
+            outline: none;
+            text-align: center;
+            width: 90%;
+            line-height: 37px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            color: #e0e3e7;
+        }
+
+        .btn {
+            width: 260px;
+            height: 40px;
+            background: #ffffff;
+            border-radius: 3px;
+            margin: 14px auto;
+            display: block;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            color: #0b2e96;
+            border-color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            color: #a3a9bb;
+        }
+
+        .b1 {
+            display: block;
+            width: 260px;
+            padding: 10px 0;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            margin: auto;
+            transition: 0.3s ease;
+        }
+
+        .b2 {
+            width: 260px;
+            padding: 10px 0;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            position: absolute;
+            transition: 0.4s all;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p class="subtitle">Bringing Text to Life</p> <!-- Added text under the logo -->
+
+    <form action="{{ url_for('check') }}" method="post">
+        <div class="tbox">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="USERNAME" required>
+        </div>
+
+        <div class="tbox">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+        </div>
+
+        <input class="btn" type="submit" value="LOGIN"/>
+    </form>
+    <!-- <a class="b1" href="#">Forgot Password?</a> -->
+    <a class="b2" method="get" href="{{ url_for('create') }}">Create New Account</a>
+</div>
+</body>
+</html>
